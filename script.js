@@ -447,6 +447,7 @@ function toggleTheme() {
     localStorage.setItem('darkMode', isDarkMode);
 }
 
+window.onload = toggleTheme();
 // Load saved theme preference
 function loadThemePreference() {
     const savedTheme = localStorage.getItem('darkMode');
