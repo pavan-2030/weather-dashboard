@@ -8,42 +8,42 @@ const API_KEY = '787f36db3d393853f09f7171686e26d3';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 // Sample data for demonstration (remove when implementing real API)
-/*const sampleWeatherData = {
-    'new york': {
-        city: 'New York',
-        country: 'US',
-        temperature: 22,
-        description: 'Partly Cloudy',
-        icon: '⛅',
-        humidity: 65,
-        windSpeed: 12,
-        pressure: 1013,
-        forecast: [
-            { day: 'Today', icon: '⛅', high: 24, low: 18, desc: 'Partly Cloudy' },
-            { day: 'Tomorrow', icon: '🌧️', high: 19, low: 15, desc: 'Light Rain' },
-            { day: 'Wednesday', icon: '☀️', high: 26, low: 20, desc: 'Sunny' },
-            { day: 'Thursday', icon: '🌤️', high: 23, low: 17, desc: 'Mostly Sunny' },
-            { day: 'Friday', icon: '⛈️', high: 21, low: 16, desc: 'Thunderstorm' }
-        ]
-    },
-    'london': {
-        city: 'London',
-        country: 'UK',
-        temperature: 15,
-        description: 'Rainy',
-        icon: '🌧️',
-        humidity: 78,
-        windSpeed: 8,
-        pressure: 1008,
-        forecast: [
-            { day: 'Today', icon: '🌧️', high: 17, low: 12, desc: 'Rainy' },
-            { day: 'Tomorrow', icon: '⛅', high: 19, low: 14, desc: 'Partly Cloudy' },
-            { day: 'Wednesday', icon: '☁️', high: 16, low: 11, desc: 'Cloudy' },
-            { day: 'Thursday', icon: '🌧️', high: 18, low: 13, desc: 'Light Rain' },
-            { day: 'Friday', icon: '🌤️', high: 20, low: 15, desc: 'Mostly Sunny' }
-        ]
-    }
-};*/
+// const sampleWeatherData = {
+//     'new york': {
+//         city: 'New York',
+//         country: 'US',
+//         temperature: 22,
+//         description: 'Partly Cloudy',
+//         icon: '⛅',
+//         humidity: 65,
+//         windSpeed: 12,
+//         pressure: 1013,
+//         forecast: [
+//             { day: 'Today', icon: '⛅', high: 24, low: 18, desc: 'Partly Cloudy' },
+//             { day: 'Tomorrow', icon: '🌧️', high: 19, low: 15, desc: 'Light Rain' },
+//             { day: 'Wednesday', icon: '☀️', high: 26, low: 20, desc: 'Sunny' },
+//             { day: 'Thursday', icon: '🌤️', high: 23, low: 17, desc: 'Mostly Sunny' },
+//             { day: 'Friday', icon: '⛈️', high: 21, low: 16, desc: 'Thunderstorm' }
+//         ]
+//     },
+//     'london': {
+//         city: 'London',
+//         country: 'UK',
+//         temperature: 15,
+//         description: 'Rainy',
+//         icon: '🌧️',
+//         humidity: 78,
+//         windSpeed: 8,
+//         pressure: 1008,
+//         forecast: [
+//             { day: 'Today', icon: '🌧️', high: 17, low: 12, desc: 'Rainy' },
+//             { day: 'Tomorrow', icon: '⛅', high: 19, low: 14, desc: 'Partly Cloudy' },
+//             { day: 'Wednesday', icon: '☁️', high: 16, low: 11, desc: 'Cloudy' },
+//             { day: 'Thursday', icon: '🌧️', high: 18, low: 13, desc: 'Light Rain' },
+//             { day: 'Friday', icon: '🌤️', high: 20, low: 15, desc: 'Mostly Sunny' }
+//         ]
+//     }
+// };
 
 // DOM Elements
 const cityInput = document.getElementById('cityInput');
@@ -72,6 +72,9 @@ searchBtn.addEventListener('click', handleSearch);
 cityInput.addEventListener('keypress', handleEnterKey);
 // themeToggle.addEventListener('click', toggleTheme);
 tempToggle.addEventListener('click', toggleTemperatureUnit);
+
+
+
 
 // Initialize Application
 function initializeApp() {
@@ -437,22 +440,26 @@ function toggleTemperatureUnit() {
 
 // Theme toggle functionality
 function toggleTheme() {
-    // isDarkMode = !isDarkMode;
-    // document.body.classList.toggle('dark-mode');
-    
-    // const themeIcon = document.querySelector('.theme-icon');
-    // themeIcon.textContent = isDarkMode ? '☀️' : '🌙';
-    
+     // Apply dark mode
+    document.body.classList.add('dark-mode');
+    themeIcon.textContent = '🌙';
     // Save theme preference
-    localStorage.setItem('darkMode', isDarkMode);
+    localStorage.setItem('theme', 'dark');
 }
 
-window.onload = toggleTheme();
+window.addEventListener("load", toggleTheme);
+// window.addEventListener("load", loadThemePreference);
+
+
 // Load saved theme preference
 function loadThemePreference() {
-    const savedTheme = localStorage.getItem('darkMode');
-    if (savedTheme === 'true') {
-        toggleTheme();
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        const themeIcon = document.querySelector('.theme-icon');
+        if (themeIcon) {
+            themeIcon.textContent = '🌙';
+        }
     }
 }
 

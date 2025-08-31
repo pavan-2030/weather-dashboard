@@ -3,9 +3,9 @@
     100% { transform: rotate(360deg); }
 }
 
-.loading-spinner {
+/* .loading-spinner {
     animation: spin 1s linear infinite;
-}
+} */
 
 /* Fade-in Animation for Main Weather Card */
 @keyframes fadeIn {
