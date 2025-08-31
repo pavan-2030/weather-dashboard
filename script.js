@@ -70,7 +70,7 @@ const forecastContainer = document.getElementById('forecastContainer');
 document.addEventListener('DOMContentLoaded', initializeApp);
 searchBtn.addEventListener('click', handleSearch);
 cityInput.addEventListener('keypress', handleEnterKey);
-themeToggle.addEventListener('click', toggleTheme);
+// themeToggle.addEventListener('click', toggleTheme);
 tempToggle.addEventListener('click', toggleTemperatureUnit);
 
 // Initialize Application
@@ -437,11 +437,11 @@ function toggleTemperatureUnit() {
 
 // Theme toggle functionality
 function toggleTheme() {
-    isDarkMode = !isDarkMode;
-    document.body.classList.toggle('dark-mode');
+    // isDarkMode = !isDarkMode;
+    // document.body.classList.toggle('dark-mode');
     
-    const themeIcon = document.querySelector('.theme-icon');
-    themeIcon.textContent = isDarkMode ? '☀️' : '🌙';
+    // const themeIcon = document.querySelector('.theme-icon');
+    // themeIcon.textContent = isDarkMode ? '☀️' : '🌙';
     
     // Save theme preference
     localStorage.setItem('darkMode', isDarkMode);
