@@ -110,7 +110,7 @@ function loadDefaultWeather() {
     setTimeout(() => {
         displayWeatherData(sampleWeatherData['new york']);
         hideLoading();
-    }, 1000);
+    }, 3000);
 }
 
 // Handle search button click
@@ -664,11 +664,11 @@ function debounce(func, wait) {
 }
 
 // Apply debouncing to search function
-const debouncedSearch = debounce((city) => {
-    if (city.length > 2) {
-        searchWeather(city);
-    }
-}, 500);
+// const debouncedSearch = debounce((city) => {
+//     if (city.length > 2) {
+//         searchWeather(city);
+//     }
+// }, 500);
 
 // Auto-complete functionality
 cityInput.addEventListener('input', (e) => {
