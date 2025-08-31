@@ -1,0 +1,245 @@
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Fade-in Animation for Main Weather Card */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Slide-in Animation for Forecast Cards */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Staggered animation for forecast cards */
+.forecast-card:nth-child(1) { animation-delay: 0.1s; }
+.forecast-card:nth-child(2) { animation-delay: 0.2s; }
+.forecast-card:nth-child(3) { animation-delay: 0.3s; }
+.forecast-card:nth-child(4) { animation-delay: 0.4s; }
+.forecast-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Weather Icon Animations */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.weather-icon {
+    animation: bounce 2s infinite;
+}
+
+/* Sun Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.weather-icon.sun {
+    animation: rotate 10s linear infinite;
+}
+
+/* Cloud Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.weather-icon.cloud {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Rain Animation */
+@keyframes rain {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+.weather-icon.rain {
+    animation: rain 1s ease-in-out infinite alternate;
+}
+
+/* Snow Animation */
+@keyframes snow {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(180deg);
+    }
+}
+
+.weather-icon.snow {
+    animation: snow 2s ease-in-out infinite;
+}
+
+/* Thunderstorm Animation */
+@keyframes thunder {
+    0%, 90%, 100% {
+        opacity: 1;
+    }
+    5%, 15%, 25% {
+        opacity: 0.3;
+    }
+}
+
+.weather-icon.thunder {
+    animation: thunder 2s infinite;
+}
+
+/* Button Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.search-btn:active {
+    animation: pulse 0.3s ease;
+}
+
+/* Weather Card Entrance Animation */
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.weather-card.animate-entrance {
+    animation: cardEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Forecast Container Animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.forecast-container.animate-entrance {
+    animation: slideUp 0.8s ease-out 0.3s both;
+}
+
+/* Hover Effects for Interactive Elements */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+}
+
+.theme-toggle:hover .theme-icon {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+/* Temperature Unit Toggle Animation */
+@keyframes flip {
+    0% { transform: rotateY(0); }
+    50% { transform: rotateY(90deg); }
+    100% { transform: rotateY(0); }
+}
+
+.temp-toggle.flipping {
+    animation: flip 0.6s ease-in-out;
+}
+
+/* Error Message Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.error-message.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Background Transition Animation */
+body {
+    transition: background 1s ease-in-out;
+}
+
+/* Weather Details Animation on Load */
+.detail-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-item:nth-child(1) { animation-delay: 0.1s; }
+.detail-item:nth-child(2) { animation-delay: 0.2s; }
+.detail-item:nth-child(3) { animation-delay: 0.3s; }
+.detail-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
