@@ -447,7 +447,7 @@ function toggleTheme() {
     localStorage.setItem('theme', 'dark');
 }
 
-window.addEventListener("load", toggleTheme);
+// window.addEventListener("load", toggleTheme);
 // window.addEventListener("load", loadThemePreference);
 
 
@@ -462,6 +462,18 @@ function loadThemePreference() {
         }
     }
 }
+
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+
+    const themeIcon = document.querySelector('.theme-icon');
+    if (themeIcon) {
+        themeIcon.textContent = '🌙';
+    }
+}
+
+// Always run on page load
+window.addEventListener("load", enableDarkMode);
 
 // Loading state functions
 function showLoading() {
